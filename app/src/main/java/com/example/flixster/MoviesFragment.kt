@@ -1,6 +1,5 @@
 package com.example.flixster
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,10 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import okhttp3.Headers
-import org.json.JSONObject
 
 // --------------------------------//
 // CHANGE THIS TO BE YOUR API KEY  //
@@ -71,13 +67,11 @@ class MoviesFragment : Fragment(), OnListFragmentInteractionListener {
                         progressBar.hide()
 
                         // Get the "results" json out of the response, as another JSONObject
-                        val resultsJSON : JSONObject = json.jsonObject.get("results") as JSONObject
+                        val resultsJSON = json.jsonObject.getJSONArray("results")
                         movies.addAll(Movie.fromJsonArr(resultsJSON))
-//
 
+                        recyclerView.adapter = MovieRecyclerViewAdapter(movies, this@MoviesFragment)
 
-                        recyclerView.adapter = LatestMovieRecyclerViewAdapter(models, this@LatestMoviesFragment)
-                        Log.i(TAG,"Movie list $models")
                         // Look for this in Logcat:
                         Log.d("LatestMoviesFragment", "response successful")
                     }
@@ -111,8 +105,8 @@ class MoviesFragment : Fragment(), OnListFragmentInteractionListener {
     /*
      * What happens when a particular book is clicked.
      */
-    override fun onItemClick(item: LatestMovie) {
-        Toast.makeText(context, "test: " + item.movieTitle, Toast.LENGTH_LONG).show()
+    override fun onItemClick(item: Movie) {
+        Toast.makeText(context, "test: " + item.title, Toast.LENGTH_LONG).show()
     }
 
 }

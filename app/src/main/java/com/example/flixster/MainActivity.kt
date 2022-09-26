@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
 
         val supportFragmentManager = supportFragmentManager
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(id.content, LatestMoviesFragment(), null).commit()
+        fragmentTransaction.replace(id.content, MoviesFragment(), null).commit()
     }
 }

@@ -32,7 +32,7 @@ class MovieRecyclerViewAdapter(
         var mItem: Movie? = null
         val mMovieTitle: TextView = mView.findViewById<View>(id.title) as TextView
         val mMovieOverview: TextView = mView.findViewById<View>(id.overview) as TextView
-        val mMovieImage: ImageView = mView.findViewById<View>(id.image) as ImageView
+        val mMoviePoster: ImageView = mView.findViewById<View>(id.image) as ImageView
 
         override fun toString(): String {
             return mMovieTitle.toString() + " '" + mMovieOverview.text + "'"
@@ -46,15 +46,14 @@ class MovieRecyclerViewAdapter(
         val movie = movies[position]
 
         holder.mItem = movie
-        holder.mMovieTitle.text = movie.movieTitle
-        holder.mMovieOverview.text = movie.movieOverview
+        holder.mMovieTitle.text = movie.title
+        holder.mMovieOverview.text = movie.overview
 
-        var imgUrl: String = movie.getImageUrl()
 
         Glide.with(holder.mView)
-            .load(imgUrl)
+            .load(movie.posterUrl)
             .centerInside()
-            .into(holder.mMovieImage)
+            .into(holder.mMoviePoster)
 
 //        holder.mView.setOnClickListener {
 //            holder.mItem?.let { book ->

@@ -1,6 +1,7 @@
 package com.example.flixster
 
 import org.json.JSONArray
+
 /**
  * The Model for storing a single book from the NY Times API
  *
@@ -18,7 +19,7 @@ class Movie (
     val backdropUrl = "https://image.tmdb.org/t/p/w342/$backdropPath"
 
     companion object {
-        fun fromJsonArr(arrayMovieJson : JSONArray): MutableList<Movie> {
+        fun fromJsonArr(arrayMovieJson: JSONArray): MutableList<Movie> {
             val movies = mutableListOf<Movie>()
 
             for (i in 0 until arrayMovieJson.length()) {
