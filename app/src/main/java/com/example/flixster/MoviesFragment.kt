@@ -27,8 +27,8 @@ private const val API_KEY = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
  * The class for the only fragment in the app, which contains the progress bar,
  * recyclerView, and performs the network calls to the NY Times API.
  */
-class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
-    private val movies = mutableListOf<LatestMovie>()
+class MoviesFragment : Fragment(), OnListFragmentInteractionListener {
+    private val movies = mutableListOf<Movie>()
     /*
      * Constructing the view
      */
@@ -72,7 +72,7 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
 
                         // Get the "results" json out of the response, as another JSONObject
                         val resultsJSON : JSONObject = json.jsonObject.get("results") as JSONObject
-                        movies.addAll(LatestMovie.fromJsonArray(resultsJSON))
+                        movies.addAll(Movie.fromJsonArr(resultsJSON))
 //
 
 

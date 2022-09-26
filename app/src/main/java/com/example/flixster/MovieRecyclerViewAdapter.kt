@@ -14,11 +14,11 @@ import com.example.flixster.R.id
  * [RecyclerView.Adapter] that can display a [LatestMovie] and makes a call to the
  * specified [OnListFragmentInteractionListener].
  */
-class LatestMovieRecyclerViewAdapter(
-    private val movies: List<LatestMovie>,
+class MovieRecyclerViewAdapter(
+    private val movies: List<Movie>,
     private val mListener: OnListFragmentInteractionListener?
 )
-    : RecyclerView.Adapter<LatestMovieRecyclerViewAdapter.MovieViewHolder>() {
+    : RecyclerView.Adapter<MovieRecyclerViewAdapter.MovieViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_latest_movie, parent, false)
         return MovieViewHolder(view)
@@ -29,7 +29,7 @@ class LatestMovieRecyclerViewAdapter(
      * (Yes, the same ones as in the XML layout files!)
      */
     inner class MovieViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        var mItem: LatestMovie? = null
+        var mItem: Movie? = null
         val mMovieTitle: TextView = mView.findViewById<View>(id.title) as TextView
         val mMovieOverview: TextView = mView.findViewById<View>(id.overview) as TextView
         val mMovieImage: ImageView = mView.findViewById<View>(id.image) as ImageView
