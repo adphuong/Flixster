@@ -30,16 +30,15 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='flixster.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='flixster.gif' title='Video Walkthrough' width="375" height="auto" alt='Video Walkthrough' />
 
 
 
-GIF created with ...  
-[LICEcap](https://www.cockos.com/licecap/) for Windows
+GIF created with [LICEcap](https://www.cockos.com/licecap/) for Windows
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had trouble parsing the JSON object using gson, so I ended up implementing it manually.
 
 ## License
 
