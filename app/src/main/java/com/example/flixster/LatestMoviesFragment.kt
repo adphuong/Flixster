@@ -81,12 +81,12 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
                         val booksRawJSON : String = resultsJSON.get("books").toString()
 
                         val gson = Gson()
-                        val arrayBookType = object : TypeToken<List<LatestMovie>>() {}.type
-                        val models : List<LatestMovie> = gson.fromJson(booksRawJSON, arrayBookType) // Fix me!
+                        val arrayMovieType = object : TypeToken<List<LatestMovie>>() {}.type
+                        val models : List<LatestMovie> = gson.fromJson(booksRawJSON, arrayMovieType) // Fix me!
                         recyclerView.adapter = LatestMovieRecyclerViewAdapter(models, this@LatestMoviesFragment)
 
                         // Look for this in Logcat:
-                        Log.d("BestSellerBooksFragment", "response successful")
+                        Log.d("LatestMoviesFragment", "response successful")
                     }
 
                     /*
@@ -104,7 +104,7 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
 
                         // If the error is not null, log it!
                         t?.message?.let {
-                            Log.e("BestSellerBooksFragment", errorResponse)
+                            Log.e("LatestMoviesFragment", errorResponse)
                         }
                     }
                 }]

@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide
 import com.example.flixster.R.id
 
 /**
- * [RecyclerView.Adapter] that can display a [BestSellerBook] and makes a call to the
+ * [RecyclerView.Adapter] that can display a [LatestMovie] and makes a call to the
  * specified [OnListFragmentInteractionListener].
  */
 class LatestMovieRecyclerViewAdapter(

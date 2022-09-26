@@ -10,12 +10,12 @@ import com.google.gson.annotations.SerializedName
 class LatestMovie {
     @JvmField
     @SerializedName("title")
-    var title: String? = null
+    var movieTitle: String? = null
 
-    @SerializedName("movie_image")
+    @SerializedName("poster_path")
     val movieImageUrl: String? = null
 
-    @SerializedName("description")
-    val description: String? = null
+    @SerializedName("overview")
+    val overview: String? = null
 
 }
