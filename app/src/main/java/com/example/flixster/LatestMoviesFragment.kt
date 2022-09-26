@@ -21,7 +21,7 @@ import org.json.JSONObject
 // --------------------------------//
 // CHANGE THIS TO BE YOUR API KEY  //
 // --------------------------------//
-private const val API_KEY = "yByjlkbAYo0FvKrv0bLB0xNGPOYUIEcj"
+private const val API_KEY = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
 
 /*
  * The class for the only fragment in the app, which contains the progress bar,
@@ -59,7 +59,8 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
 
         // Using the client, perform the HTTP request
         client[
-                "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json",
+                "\n" +
+                        "https://api.themoviedb.org/3/movie/now_playing",
                 params,
                 object : JsonHttpResponseHandler() {
                     /*
