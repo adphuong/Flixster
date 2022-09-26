@@ -23,8 +23,10 @@
         android:layout_gravity="center"
         android:indeterminate="true"
         android:theme="@style/Widget.AppCompat.ProgressBar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="327dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/list"
+        app:layout_constraintEnd_toEndOf="@+id/list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/list"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
