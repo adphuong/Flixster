@@ -10,8 +10,7 @@
         android:name="com.example.flixster.LatestMoviesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+
         app:layoutManager="LinearLayoutManager"
         tools:context=".LatestMoviesFragment"
         tools:listitem="@layout/fragment_latest_movie" />
@@ -24,6 +23,8 @@
         android:layout_gravity="center"
         android:indeterminate="true"
         android:theme="@style/Widget.AppCompat.ProgressBar"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="327dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
