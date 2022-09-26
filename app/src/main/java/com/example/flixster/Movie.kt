@@ -10,12 +10,15 @@ import com.google.gson.annotations.SerializedName
 class LatestMovie {
     @JvmField
     @SerializedName("title")
-    var movieTitle: String? = null
+    val movieTitle: String? = null
 
     @SerializedName("poster_path")
-    val movieImageUrl: String? = null
+    var movieImageUrl: String? = null
 
     @SerializedName("overview")
-    val overview: String? = null
+    val movieOverview: String? = null
 
+    fun getImageUrl(): String {
+        return String.format("https://image.tmdb.org/t/p/w500/%s", movieImageUrl)
+    }
 }
