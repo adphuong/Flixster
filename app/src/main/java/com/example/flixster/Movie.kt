@@ -1,24 +1,40 @@
 package com.example.flixster
 
-import com.google.gson.annotations.SerializedName
+import org.json.JSONArray
 /**
  * The Model for storing a single book from the NY Times API
  *
  * SerializedName tags MUST match the JSON response for the
  * object to correctly parse with the gson library.
  */
-class LatestMovie {
-    @JvmField
-    @SerializedName("title")
-    val movieTitle: String? = null
+class Movie (
+    val movieId: Int,
+    val title: String,
+    val overview: String,
+    val posterPath: String,
+    val backdropPath: String) {
 
-    @SerializedName("poster_path")
-    var movieImageUrl: String? = null
+    val posterUrl = "https://image.tmdb.org/t/p/w342/$posterPath"
+    val backdropUrl = "https://image.tmdb.org/t/p/w342/$backdropPath"
 
-    @SerializedName("overview")
-    val movieOverview: String? = null
+    companion object {
+        fun fromJsonArr(arrayMovieJson : JSONArray): MutableList<Movie> {
+            val movies = mutableListOf<Movie>()
 
-    fun getImageUrl(): String {
-        return String.format("https://image.tmdb.org/t/p/w500/%s", movieImageUrl)
+            for (i in 0 until arrayMovieJson.length()) {
+                val jsonMovie = arrayMovieJson.getJSONObject(i)
+                movies.add(
+                    Movie(
+                        jsonMovie.getInt("id"),
+                        jsonMovie.getString("title"),
+                        jsonMovie.getString("overview"),
+                        jsonMovie.getString("poster_path"),
+                        jsonMovie.getString("backdrop_path")
+                    )
+                )
+            }
+            return movies
+        }
+
     }
 }
