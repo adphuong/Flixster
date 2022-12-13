@@ -1,4 +1,4 @@
-# Android Project 3 - *Flixster*
+# *Flixster*
 
 Submitted by: **April Phuong**
 
